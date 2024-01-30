@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Dinesh</title>
+    <style>
+     body {
+        font-family: 'Roboto', sans-serif;
+        
+      }
+
+      header {
+        background-color: #fff;
+        color: #333;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 20px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .hero {
+        background-image: url("./sample.jpeg");
+        background-size: cover;
+        text-align: center;
+        padding: 140px 20px;
+        color: #fff;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #ff6600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .cta-button:hover {
+        background-color: #e55e00;
+      }
+
+      .sub-header {
+        background-color: #fff;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .about-us {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+
+      .services {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 40px 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .service-card {
+        display: inline-block;
+        width: 200px;
+        margin-right: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      .service-card:hover {
+        transform: scale(1.05);
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      /* Updated styles for button hover effect */
+      nav a:hover,
+      .cta-button:hover {
+        color: #fff;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 20px;
+        }
+
+        .hero {
+          padding: 80px 20px;
+        }
+
+        .about-us {
+          padding: 60px 20px;
+        }
+
+        .services {
+          padding: 20px;
+        }
+
+        .service-card {
+          margin-right: 10px;
+        }
+      }
+      
+      .aboutusimg{
+          height: 300px;
+          width: 250px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CodSoft Internship</h1>
+      <div>
+        <nav>
+          <ul>
+            <li><a href="#" class="header-btn">Home</a></li>
+            <li><a href="#" class="header-btn">Features</a></li>
+            <li><a href="#" class="header-btn">Pricing</a></li>
+            <li><a href="#" class="header-btn">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h2>Welcome to landing page</h2>
+      <p>Discover the features of designing and creation!</p>
+      <a href="#" class="cta-button">Get Started</a>
+    </section>
+
+    <section class="sub-header">
+      <h2>web development</h2>
+      <p>Landing page for creative and designing</p>
+    </section>
+
+    <section class="about-us">
+      <h2>About Us</h2>
+      <img class="aboutusimg" src="aboutuss.jpg" alt="About Us Image" />
+      <p>
+        Web developers create functional, 
+        user-friendly websites and web applications. They may write code, develop and test new applications, or monitor site performance and traffic. Front-end developers focus on the user-facing side of their work, while back-end developers make websites functional and secure.
+      </p>
+    </section>
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <div id="service-container"></div>
+
+      <script>
+        // Dynamic generation of service cards
+        const services = [
+          {
+            image: "ui.jpeg",
+            title: "user experience",
+            description:"User experience (UX) focuses on having a deep understanding of users, what they need, what they value, their abilities........"
+          },
+          {
+            image: "ux.jpeg",
+            title: "desighning",
+            description: "to create, fashion, execute, or construct according to plan.",
+          },
+         
+        
+          // Add more service objects as needed
+        ];
+
+        const serviceContainer = document.getElementById("service-container");
+
+        services.forEach((service) => {
+          const card = document.createElement("div");
+          card.className = "service-card";
+
+          const img = document.createElement("img");
+          img.src = service.image;
+          img.alt = service.title;
+
+          const info = document.createElement("div");
+          info.className = "service-info";
+
+          const title = document.createElement("h3");
+          title.textContent = service.title;
+
+          const desc = document.createElement("p");
+          desc.textContent = service.description;
+
+          info.appendChild(title);
+          info.appendChild(desc);
+
+          card.appendChild(img);
+          card.appendChild(info);
+
+          serviceContainer.appendChild(card);
+        });
+      </script>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2023 Your Company. All rights reserved.<br />
+        Owner- Dinesh M <br />
+        Web Development Internship (Level 1:- Task 1)
+      </p>
+    </footer>
+  </body>
+</html>
