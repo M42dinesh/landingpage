@@ -20,12 +20,17 @@
         justify-content: space-between;
         align-items: center;
       }
-
-      nav a {
+nav ul{
+  display: flex;
+  gap: 20px;
+}
+nav ul li{
+  list-style: none;
+}
+      nav ul li a {
         color: #333;
         text-decoration: none;
         font-weight: bold;
-        margin-right: 20px;
         transition: color 0.3s ease-in-out;
       }
 
@@ -103,7 +108,7 @@
       /* Updated styles for button hover effect */
       nav a:hover,
       .cta-button:hover {
-        color: #fff;
+        color: #585858;
       }
 
       /* Responsive styles */
